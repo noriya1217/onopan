@@ -1,0 +1,19 @@
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+/Users/apple/.rbenv/versions/2.6.3/bin/ruby -I /Users/apple/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20190727-1271-1ialy25.rb extconf.rb
+creating Makefile
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20190727-1271-14h6u5o/byebug
