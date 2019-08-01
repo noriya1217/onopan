@@ -4,7 +4,19 @@
 
 ## 概要
 
+- パン屋の売れ残ったパンを廃棄している問題を解決する。
+
+- [「天気が悪くて売れ行きが悪そうな日でも、来店してくれるお客様のために一通りの種類を焼かないといけない。その日に焼いた一番おいしいパンを食べてほしいのでどうしても廃棄は出てしまう」
+「第一歩にパンを選んだのは、常温で数日、冷凍すれば数週間は保存できるパンでも、焼いたその日に捨てられることが多い」](https://www.asahi.com/articles/ASM5H35LDM5HULOB001.html)
+
+- [「持続可能な開発目標（SDGs）の12.3に明記されている、”2030年までに食品廃棄物を半減させる”という目標の達成に取り組み」](https://www.caa.go.jp/policies/policy/consumer_policy/information/food_loss/efforts/pdf/efforts_180628_0001.pdf)
+
+- マネタイムズとしてはサブスクリプションとしてパン屋に定額制で導入してもらう。
+    > ベーシックプラン¥980 / プレミアムプラン¥1980といった形式。
+
 ## コンセプト
+
+フードロスをなくすサービス。
 
 ## バージョン
 
@@ -57,8 +69,12 @@ https://docs.google.com/spreadsheets/d/1eDzwu_zNBpFci_TGAzBEXLxIx81iTJzf7BdUquxz
 
 https://drive.google.com/file/d/1JBjKUueBZq6oZCChGhhQao0QqAYNKdKp/view?usp=sharing
 
+!['ono pan_ER図](https://github.com/noriya1217/onopan/blob/images/images/onopan_erd.png)
+
 ## 画面遷移図
 
 https://drive.google.com/file/d/1JBjKUueBZq6oZCChGhhQao0QqAYNKdKp/view?usp=sharing
+
+!['ono pan_画面遷移図](https://github.com/noriya1217/onopan/blob/images/images/onopan_screen_transition_diagram.png)
 
 ## 画面ワイヤーフレーム
