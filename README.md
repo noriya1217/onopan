@@ -75,6 +75,6 @@ https://drive.google.com/file/d/1JBjKUueBZq6oZCChGhhQao0QqAYNKdKp/view?usp=shari
 
 https://drive.google.com/file/d/1JBjKUueBZq6oZCChGhhQao0QqAYNKdKp/view?usp=sharing
 
-!['ono pan_画面遷移図](https://github.com/noriya1217/onopan/blob/images/images/onopan_screen_transition_diagram.png)
+!['ono pan_画面遷移図](https://github.com/noriya1217/onopan/blob/images/onopan_screen_transition_diagram.png)
 
 ## 画面ワイヤーフレーム
