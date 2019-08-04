@@ -1,7 +1,5 @@
 # アプリ名 : 'oha pan
 
-## QRコード
-
 ## 概要
 
 - パン屋の売れ残ったパンを廃棄している問題を解決する。
@@ -17,6 +15,12 @@
 ## コンセプト
 
 フードロスをなくすサービス。
+
+## 操作手順
+
+- GIFやYouTubeを使い、操作手順としての動画を作成し、ここに載せる。
+
+## QRコード
 
 ## バージョン
 
@@ -75,6 +79,9 @@ https://drive.google.com/file/d/1JBjKUueBZq6oZCChGhhQao0QqAYNKdKp/view?usp=shari
 
 https://drive.google.com/file/d/1JBjKUueBZq6oZCChGhhQao0QqAYNKdKp/view?usp=sharing
 
-!['ono pan_画面遷移図](https://github.com/noriya1217/onopan/blob/images/onopan_screen_transition_diagram.png)
+!['ono pan_画面遷移図](https://github.com/noriya1217/onopan/blob/images/onopan_screen_transition_diagram.jpg)
 
 ## 画面ワイヤーフレーム
+
+https://docs.google.com/spreadsheets/d/1eDzwu_zNBpFci_TGAzBEXLxIx81iTJzf7BdUquxzmbE/edit#gid=1632550666
+
