@@ -73,7 +73,7 @@ https://docs.google.com/spreadsheets/d/1eDzwu_zNBpFci_TGAzBEXLxIx81iTJzf7BdUquxz
 
 https://drive.google.com/file/d/1JBjKUueBZq6oZCChGhhQao0QqAYNKdKp/view?usp=sharing
 
-!['ono pan_ER図](https://github.com/noriya1217/onopan/blob/images/images/onopan_erd.png)
+!['ono pan_ER図](https://github.com/noriya1217/onopan/blob/images/onopan_screen_erd.jpg)
 
 ## 画面遷移図
 
