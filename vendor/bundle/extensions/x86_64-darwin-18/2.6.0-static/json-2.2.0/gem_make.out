@@ -1,0 +1,13 @@
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/json-2.2.0/ext/json
+/Users/apple/.rbenv/versions/2.6.3/bin/ruby -I /Users/apple/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20190806-32451-1jjy0yc.rb extconf.rb
+creating Makefile
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/json-2.2.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/json-2.2.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/json-2.2.0/ext/json
+make "DESTDIR=" install
