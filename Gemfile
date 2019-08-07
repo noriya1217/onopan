@@ -12,10 +12,10 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 
 # Frontend
-gem 'bootstrap', '~> 4.3.1'
+# gem 'bootstrap', '~> 4.3.1'
 gem 'coderay'
 gem 'coffee-rails', '~> 4.2'
-gem 'jquery-rails'
+# gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
 
 # Backend
