@@ -1,0 +1,16 @@
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+/Users/apple/.rbenv/versions/2.6.3/bin/ruby -I /Users/apple/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20190806-32451-4xsuco.rb extconf.rb
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.

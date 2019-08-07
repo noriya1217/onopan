@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sample/starter'
   devise_for :stores
   root 'stores#index'
   if Rails.env.development?

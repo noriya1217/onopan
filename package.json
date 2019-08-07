@@ -1,5 +1,7 @@
 {
   "name": "onopan",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "admin-lte": "^2.4.15"
+  }
 }

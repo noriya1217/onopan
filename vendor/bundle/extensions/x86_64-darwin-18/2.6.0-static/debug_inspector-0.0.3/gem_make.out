@@ -1,0 +1,15 @@
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+/Users/apple/.rbenv/versions/2.6.3/bin/ruby -I /Users/apple/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20190806-32451-17hx4m8.rb extconf.rb
+creating Makefile
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20190806-32451-1ou1lec
