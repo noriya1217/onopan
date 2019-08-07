@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Onopan</title>
+    <meta charset="utf-8">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <title>'Onopan</title>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+      <%= render 'shared/layout/header' %>
+      <%= render 'shared/layout/sidebar' %>
+      <%= render 'shared/layout/menu' %>
+
+      <div class="content-wrapper">
+        <div class="content">
+          <%= yield %>
+        </div>
+      </div>
+
+      <%= render 'shared/layout/footer' %>
+    </div>
   </body>
 </html>
