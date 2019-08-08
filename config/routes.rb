@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'sample/starter'
-  devise_for :stores
   root 'stores#index'
+
+  devise_for :stores
+  resources :stores
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

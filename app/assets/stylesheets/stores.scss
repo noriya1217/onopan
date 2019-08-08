@@ -1,16 +1,22 @@
-.index_content{
+.bg_image{
   position: relative;
+  background: url(main_image.jpg) center center / cover no-repeat fixed;
 }
 
-.index_content h1{
+.bg_image_login{
+  background: url(bg_login.jpg) center center / cover no-repeat fixed;
+  display: flex;
+  align-items: baseline;
+}
+
+.bg_mask{
   position: absolute;
-  color: #000;
-  text-align: center;
-  top: 0;
-  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background: rgba(255,255,255,0.6);
 }
 
-.index_content img{
-  width: 100%;
-  opacity: 0.5;
+.form_frame{
+  padding: 10px;
+  border-radius: 5px;
 }
