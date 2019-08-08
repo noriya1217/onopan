@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'stores#index'
+  devise_scope :store do
+    root "devise/sessions#new"
+  end
 
   devise_for :stores
   resources :stores
