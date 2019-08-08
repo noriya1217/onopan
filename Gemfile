@@ -36,14 +36,12 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 2.13'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'launchy'
   gem 'letter_opener_web'
   gem 'pry-rails'
   gem 'rspec-rails'
-  gem 'selenium-webdriver'
   gem 'spring'
   gem 'spring-commands-rspec'
 end
@@ -55,6 +53,12 @@ group :development do
   gem 'rubocop'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

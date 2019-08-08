@@ -4,26 +4,48 @@
     <meta charset="utf-8">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <title>'Onopan</title>
-
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body class="hold-transition skin-blue sidebar-mini">
-    <div class="wrapper">
-      <%= render 'shared/layout/header' %>
-      <%= render 'shared/layout/sidebar' %>
-      <%= render 'shared/layout/menu' %>
-
-      <div class="content-wrapper">
-        <div class="content">
-          <%= yield %>
+  <% if store_signed_in? %>
+    <body class="hold-transition skin-blue sidebar-mini">
+      <div class="wrapper">
+        <%= render 'shared/layout/header' %>
+        <%= render 'shared/layout/sidebar' %>
+        <%= render 'shared/layout/menu' %>
+        <div class="content-wrapper bg_image">
+          <div class="bg_mask">
+            <div class="content">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+        <%= render 'shared/layout/footer' %>
+      </div>
+    </body>
+  <% else %>
+    <body class="bg_image_login">
+      <div class="bg_mask">
+        <div class="login-box">
+          <div class="login-logo">
+            'ono pan
+          </div>
+          <% if notice %>
+            <p class="alert alert-notice"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-error"><%= alert %></p>
+          <% end %>
+          <div class="card form_frame" style="background: #EBDCB2;">
+            <div class="card-body login-card-body">
+              <%= yield %>
+            </div>
+          </div>
         </div>
       </div>
-
-      <%= render 'shared/layout/footer' %>
-    </div>
-  </body>
+    </body>
+  <% end %>
 </html>

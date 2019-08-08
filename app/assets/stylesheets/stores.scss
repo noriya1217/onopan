@@ -1,16 +1,26 @@
-.index_content{
-  position: relative;
-}
-
-.index_content h1{
-  position: absolute;
-  color: #000;
+footer{
   text-align: center;
-  top: 0;
-  left: 0;
 }
 
-.index_content img{
+.bg_image{
+  position: relative;
+  background: url(main_image.jpg) center center / cover no-repeat fixed;
+}
+
+.bg_image_login{
+  background: url(bg_login.jpg) center center / cover no-repeat fixed;
+  display: flex;
+  align-items: baseline;
+}
+
+.bg_mask{
+  position: absolute;
   width: 100%;
-  opacity: 0.5;
+  min-height: 100%;
+  background: rgba(255,255,255,0.6);
+}
+
+.form_frame{
+  padding: 10px;
+  border-radius: 5px;
 }
