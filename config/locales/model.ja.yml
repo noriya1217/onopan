@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    models:
+      store: "店舗情報"
+    attributes:
+      contact:
+        name: "名前"
+        email: "メールアドレス"
+        content: "内容"
+      store:
+        title: "タイトル"
+        name: "名前"
+        address: "住所"
+        email: "メールアドレス"
+        telephone: "電話番号"
+        start_time: "営業開始時刻"
+        end_time: "営業終了時刻"
+        access: "アクセス"
+        image: "店舗画像"
+        content: "内容"
+        current_password: "現在のパスワード"
+        password: "パスワード"
+        password_confirmation: "確認用パスワード"
+        remember_me: "ログインを記憶"
