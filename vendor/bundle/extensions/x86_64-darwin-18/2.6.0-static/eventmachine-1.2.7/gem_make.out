@@ -1,0 +1,16 @@
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/eventmachine-1.2.7/ext/fastfilereader
+/Users/apple/.rbenv/versions/2.6.3/bin/ruby -I /Users/apple/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20190809-41165-3zugzo.rb extconf.rb
+creating Makefile
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" clean
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR="
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.bundle
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 fastfilereaderext.bundle ./.gem.20190809-41165-1yfl6nk

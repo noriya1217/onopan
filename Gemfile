@@ -47,16 +47,19 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '>= 3.3.0'
+  gem 'guard'
+  gem 'guard-livereload', require: false
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rails_best_practices'
   gem 'rubocop'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :test do
   gem 'capybara', '~> 2.13'
+  gem 'guard-rspec', require: false
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
