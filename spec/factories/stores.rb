@@ -9,6 +9,6 @@ FactoryBot.define do
     start_time { Time.now }
     end_time { Time.now }
     access { '渋谷駅から歩いて18時間' }
-    image { 'noimage' }
+    image { Rack::Test::UploadedFile.new(Rails.root.join('spec/factories/profile_image.jpg'), 'image/jpeg') }
   end
 end

@@ -220,7 +220,7 @@ RSpec.describe Store, type: :model do
       start_time: Time.now,
       end_time: Time.now,
       access: "atti",
-      image: "image",
+      image: Rack::Test::UploadedFile.new(Rails.root.join('spec/factories/profile_image.jpg'), 'image/jpeg'),
     )
     expect(store).to be_valid
   end
