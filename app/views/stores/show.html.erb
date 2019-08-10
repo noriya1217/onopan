@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card form_frame" style="background: #C9A66B;">
+  <div class="card-body login-card-body">
+    <table>
+      <tr>
+        <th><%= t('activerecord.attributes.store.name') %></th>
+        <td><%= @store.name %></td>
+      </tr>
+      <tr>
+        <th><%= t('activerecord.attributes.store.address') %></th>
+        <td><%= @store.address %></td>
+      </tr>
+      <tr>
+        <th><%= t('activerecord.attributes.store.email') %></th>
+        <td><%= @store.email %></td>
+      </tr>
+      <tr>
+        <th><%= t('activerecord.attributes.store.telephone') %></th>
+        <td><%= @store.telephone %></td>
+      </tr>
+      <tr>
+        <th>営業時間</th>
+        <td>
+          <% if (@store.start_time.hour - 12) < 0 %>
+            午前
+          <% else %>
+            午後
+          <% end %>
+          <%= @store.start_time.hour %>:
+          <!-- TODO: 13:00や18:30といった表示にしたい -->
+          <%= @store.start_time.min %>
+          〜
+          <% if (@store.end_time.hour - 12) < 0 %>
+            午前
+          <% else %>
+            午後
+          <% end %>
+          <%= @store.end_time.hour %>:
+          <%= @store.end_time.min %>
+        </td>
+      </tr>
+      <tr>
+        <th><%= t('activerecord.attributes.store.access') %></th>
+        <td><%= @store.access %></td>
+      </tr>
+        <tr>
+        <th><%= t('activerecord.attributes.store.image') %></th>
+        <td><%= image_tag(@store.image.url, :size => "400x300") %></td>
+      </tr>
+    </table>
+
+    <%= link_to '編集', edit_store_registration_path(@store.id), class: 'btn btn-primary btn-sm'%>
+  </div>
+</div>

@@ -19,6 +19,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'sass-rails', '~> 5.0'
 
 # Backend
+gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
 gem 'friendly_id', '~> 5.2.4'
 gem 'jbuilder', '~> 2.5'
 gem 'mini_magick', '~> 4.8'

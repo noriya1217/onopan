@@ -1,6 +1,6 @@
 <aside class="control-sidebar control-sidebar-dark">
   <div class="tab-content">
-    <p>プロフィール</p>
-    <%= link_to 'ログアウト', destroy_store_session_path, method: :delete %>
+    <p><%= link_to 'プロフィール', store_path(current_store.id) %></p>
+    <p><%= link_to 'ログアウト', destroy_store_session_path, method: :delete %></p>
   </div>
 </aside>

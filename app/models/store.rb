@@ -3,6 +3,9 @@ class Store < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  mount_uploader :image, ImageUploader
+
   validates :name, presence: true, length: { maximum: 30 }
   validates :address, presence: true
   validates :telephone, presence: true

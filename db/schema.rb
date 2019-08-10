@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_08_144606) do
+ActiveRecord::Schema.define(version: 2019_08_09_081412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_08_08_144606) do
   end
 
   create_table "product_images", force: :cascade do |t|
-    t.string "image", null: false
+    t.text "image", null: false
     t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2019_08_08_144606) do
     t.time "start_time", null: false
     t.time "end_time", null: false
     t.string "access", null: false
-    t.string "image", null: false
+    t.text "image", null: false
     t.index ["email"], name: "index_stores_on_email", unique: true
     t.index ["reset_password_token"], name: "index_stores_on_reset_password_token", unique: true
   end
