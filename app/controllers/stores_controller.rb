@@ -1,5 +1,6 @@
 class StoresController < ApplicationController
   before_action :authenticate_store!
+  before_action :set_store, only: [:show, :edit, :update, :destroy]
 
   def index
     @store = Store.find(current_store.id)
@@ -14,7 +15,6 @@ class StoresController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
@@ -27,5 +27,11 @@ class StoresController < ApplicationController
 
   def destroy
     
+  end
+
+  private
+
+  def set_store
+    @store = Store.find(params[:id])
   end
 end

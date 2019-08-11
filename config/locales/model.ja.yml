@@ -9,7 +9,7 @@ ja:
         content: "内容"
       store:
         title: "タイトル"
-        name: "名前"
+        name: "店舗名"
         address: "住所"
         email: "メールアドレス"
         telephone: "電話番号"

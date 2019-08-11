@@ -21,6 +21,16 @@ footer{
 }
 
 .form_frame{
-  padding: 10px;
+  position: absolute;
+  padding: 15px;
   border-radius: 5px;
+  background: rgba(201,166,107,0.6);
+  height: 95%;
+  width: 95%;
+  overflow: auto;
+  line-height: 2;
+}
+
+.sign_up_image{
+  zoom: 50%;
 }
