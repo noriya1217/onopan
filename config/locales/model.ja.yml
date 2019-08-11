@@ -22,3 +22,15 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+      product:
+        name: "商品名"
+        number: "商品数"
+        price: "価格"
+        content: "内容量"
+        preservation: "保存方法"
+        how_to_eat: "お召し上がり方"
+        expiration: "消費期限"
+        shipping: "配送方法"
+        remarks: "備考"
+      product_image:
+        image: "商品画像"
