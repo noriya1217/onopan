@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :stores
   resources :stores
+  resources :products
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

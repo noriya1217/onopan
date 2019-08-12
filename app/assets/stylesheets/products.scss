@@ -1,0 +1,33 @@
+.product_frame{
+  margin: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  background: rgba(201,166,107,0.6);
+  height: 430px;
+  line-height: 2;
+}
+
+.field{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.product_form{
+  position: absolute;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  height: 95%;
+  width: 95%;
+  background: rgba(201,166,107,0.6);
+  line-height: 2;
+  overflow: auto;
+}
+
+.screen_frame{
+  margin-top: 10px;
+  position: absolute;
+  overflow: auto;
+  height: 75%;
+  width: 95%;
+}

@@ -1,0 +1,56 @@
+<h1>商品管理画面</h1>
+<p id="notice"><%= notice %></p>
+
+<%= link_to '新しく商品を登録する', new_product_path, class: 'btn btn-primary btn-sm' %>
+<div class='row screen_frame'>
+  <% @products.each do |product| %>
+    <div class='col-md-5 product_frame'>
+      <table>
+        <% product.product_images.each do |p_image| %>
+          <tr>
+            <th><%= t('activerecord.attributes.product_image.image') %></th>
+            <td><%= image_tag(p_image.image.url, :size => "160x120") %></td>
+          </tr>
+        <% end %>
+        <tr>
+          <th><%= t('activerecord.attributes.product.name') %></th>
+          <td><%= product.name %></td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.product.number') %></th>
+          <td><%= product.number.to_s(:delimited) %>個</td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.product.price') %></th>
+          <td><%= product.price.to_s(:delimited) %>円</td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.product.content') %></th>
+          <td><%= product.content %></td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.product.preservation') %></th>
+          <td><%= product.preservation %></td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.product.how_to_eat') %></th>
+          <td><%= product.how_to_eat %></td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.product.expiration') %></th>
+          <td><%= product.expiration %></td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.product.shipping') %></th>
+          <td><%= product.shipping %></td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.product.remarks') %></th>
+          <td><%= product.remarks %></td>
+        </tr>
+      </table>
+      <%= link_to '編集', edit_product_path(product.id) %> | 
+      <%= link_to '削除', product_path(product.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+    </div>
+  <% end %>
+</div>
