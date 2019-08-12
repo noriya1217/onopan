@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_store
 
   def index
-
+    @products = Product.all
   end
 
   def new
