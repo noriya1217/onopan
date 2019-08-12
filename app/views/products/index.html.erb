@@ -1,4 +1,5 @@
 <h1>商品管理画面</h1>
+<p id="notice"><%= notice %></p>
 
 <%= link_to '新しく商品を登録する', new_product_path, class: 'btn btn-primary btn-sm' %>
 <div class='row screen_frame'>
@@ -22,6 +23,10 @@
         <tr>
           <th><%= t('activerecord.attributes.product.price') %></th>
           <td><%= product.price.to_s(:delimited) %>円</td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.product.content') %></th>
+          <td><%= product.content %></td>
         </tr>
         <tr>
           <th><%= t('activerecord.attributes.product.preservation') %></th>

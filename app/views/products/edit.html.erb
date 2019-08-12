@@ -1,0 +1,72 @@
+
+<div class='row product_form'>
+  <div class='col-md-12'>
+    <h1>商品編集フォーム</h1>
+    <% if @product.errors.any? %>
+      <div id='error_explanation' class='alert alert alert-danger'>
+        <h2><%= pluralize(@product.errors.count, 'error') %></h2>
+        <ul>
+          <% @product.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= form_with(model: @product, local: true) do |f| %>
+      <table>
+        <tr class='field'>
+          <th><%= f.label :name %></th>
+          <td><%= f.text_field :name %></td>
+        </tr>
+        <tr class='field'>
+          <th><%= f.label :number %></th>
+          <td><%= f.number_field :number %></td>
+        </tr>
+        <tr class='field'>
+          <th><%= f.label :price %></th>
+          <td><%= f.number_field :price %></td>
+        </tr>
+        <tr class='field'>
+          <th><%= f.label :content %></th>
+          <td><%= f.text_area :content %></td>
+        </tr>
+        <tr class='field'>
+          <th><%= f.label :preservation %></th>
+          <td><%= f.text_area :preservation %></td>
+        </tr>
+        <tr class='field'>
+          <th><%= f.label :how_to_eat %></th>
+          <td><%= f.text_area :how_to_eat %></td>
+        </tr>
+        <tr class='field'>
+          <th><%= f.label :expiration %></th>
+          <td><%= f.text_area :expiration %></td>
+        </tr>
+        <tr class='field'>
+          <th><%= f.label :shipping %></th>
+          <td><%= f.text_area :shipping %></td>
+        </tr>
+        <tr class='field'>
+          <th><%= f.label :remarks %></th>
+          <td><%= f.text_area :remarks %></td>
+        </tr>
+        <tr class='field'>
+          <th><%= f.label :product, "商品画像" %></th>
+          <%= f.fields_for :product_images do |p_image_form| %>
+            <td>
+              <% @product.product_images.each do |p_i| %>
+                <%= image_tag(p_i.image.url) if p_i.image && p_i.image.url %>
+              <% end %>
+              <%= p_image_form.file_field :image %>
+              <%= p_image_form.hidden_field :image_cache %>
+            </td>
+          <% end %>
+        </tr>
+      </table>
+      <div class='actions'>
+        <%= f.submit class: 'btn btn-primary btn-sm'%>
+        <%= link_to '戻る', :back, class: 'btn btn-default btn-sm' %>
+      </div>
+    <% end %>
+  </div>
+</div>

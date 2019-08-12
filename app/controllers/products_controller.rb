@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_store!
   before_action :set_store
+  before_action :set_product, only: [:edit, :update, :destroy]
 
   def index
     @products = Product.all
@@ -15,14 +16,10 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.store_id = current_store.id
     if @product.save
-      redirect_to product_path, notice: '新しい商品を作成しました'
+      redirect_to products_path, notice: '新しい商品を作成しました'
     else
       render :new
     end
-  end
-
-  def show
-
   end
 
   def edit
@@ -30,10 +27,16 @@ class ProductsController < ApplicationController
   end
 
   def update
-
+    if @product.update(product_params)
+      redirect_to products_path, notice: '商品情報を編集しました'
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @product.destroy
+    redirect_to products_path, notice: '商品を削除しました'
 
   end
 
