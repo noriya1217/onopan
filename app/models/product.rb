@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
+  belongs_to :store
   has_many :product_images, dependent: :destroy
+  has_many :number_purchases, dependent: :destroy
   accepts_nested_attributes_for :product_images, allow_destroy: true
 
   validates :name, presence: true

@@ -21,10 +21,13 @@ footer{
 }
 
 .form_frame{
-  position: absolute;
   padding: 15px;
   border-radius: 5px;
   background: rgba(201,166,107,0.6);
+}
+
+.store_form{
+  position: absolute;
   height: 95%;
   width: 95%;
   overflow: auto;
