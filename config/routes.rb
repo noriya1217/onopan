@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   end
 
   devise_for :stores
-  resources :stores
+  resources :stores, only:[:index, :show]
   resources :products
-  post '/callback' => 'linebot#callback' 
+  resources :order_slips, only:[:index, :update]
+
+  post '/callback' => 'linebot#callback'
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

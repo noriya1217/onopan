@@ -1,12 +1,16 @@
 ja:
   activerecord:
     models:
+      user: "顧客"
       store: "店舗情報"
     attributes:
-      contact:
-        name: "名前"
+      user:
+        name: "氏名"
+        age: "年齢"
+        sex: "性別"
+        profession: "職業"
         email: "メールアドレス"
-        content: "内容"
+        address: "住所"
       store:
         title: "タイトル"
         name: "店舗名"
@@ -34,3 +38,6 @@ ja:
         remarks: "備考"
       product_image:
         image: "商品画像"
+      number_purchase:
+        number: "注文数"
+        permission: "注文許可"

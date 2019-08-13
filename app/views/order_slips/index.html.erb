@@ -1,0 +1,32 @@
+<h1>注文伝票</h1>
+<p id="notice"><%= notice %></p>
+
+<%= link_to '新しく商品を登録する', new_product_path, class: 'btn btn-primary btn-sm' %>
+<div class='row screen_frame'>
+  <% @number_purchases.each do |order_slip| %>
+    <div class='col-md-3 order_slip_frame'>
+      <table>
+        <tr>
+          <th>お客様氏名</th>
+          <td><%= order_slip.user.name %></td>
+        </tr>
+        <% order_slip.product.product_images.each do |p_image| %>
+          <tr>
+            <th></th>
+            <td><%= image_tag(p_image.image.url, :size => "160x120") %></td>
+          </tr>
+        <% end %>
+        <tr>
+          <th><%= t('activerecord.attributes.product.name') %></th>
+          <td><%= order_slip.product.name %></td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.number_purchase.number') %></th>
+          <!-- TODO: 注文数を選べるようにしたい -->
+          <td>1個</td>
+        </tr>
+      </table>
+      <%= link_to '注文確定', order_slip_path(order_slip.id), method: :patch %>
+    </div>
+  <% end %>
+</div>

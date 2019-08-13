@@ -1,8 +1,7 @@
 require 'line/bot'
 
 class ProductsController < ApplicationController
-  before_action :authenticate_store!
-  before_action :set_store
+  # before_action :set_store
   before_action :set_product, only: [:edit, :update, :destroy]
 
   def index
@@ -22,7 +21,7 @@ class ProductsController < ApplicationController
 
       # TODO: 全端末に送るように後で変更
       user_id = 'U088ecb9e49b8eddf06df8fcf64e9aebb'
-      response = client.push_message(user_id, product_message)
+      client.push_message(user_id, product_message)
 
       redirect_to products_path, notice: '新しい商品を作成しました'
     else
@@ -39,7 +38,7 @@ class ProductsController < ApplicationController
       client
       # TODO: 全端末に送るように後で変更
       user_id = 'U088ecb9e49b8eddf06df8fcf64e9aebb'
-      response = client.push_message(user_id, product_message)
+      client.push_message(user_id, product_message)
       redirect_to products_path, notice: '商品情報を編集しました'
     else
       render :edit
@@ -54,9 +53,9 @@ class ProductsController < ApplicationController
 
   private
 
-  def set_store
-    @store = Store.find(current_store.id)
-  end
+  # def set_store
+  #   @store = Store.find(current_store.id)
+  # end
 
   def set_product
     @product = Product.find(params[:id])
@@ -74,14 +73,14 @@ class ProductsController < ApplicationController
       :shipping,
       :remarks,
       :store_id,
-      product_images_attributes: [:id, :image, :product_id],
+      product_images_attributes: %i[id image product_id],
     )
   end
 
   def client
     @client ||= Line::Bot::Client.new { |config|
-      config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
-      config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
+      config.channel_secret = ENV['LINE_CHANNEL_SECRET']
+      config.channel_token = ENV['LINE_CHANNEL_TOKEN']
     }
   end
 
