@@ -1,0 +1,17 @@
+<h1>
+  過去売上伝票【
+  <%= Time.current.year %>年
+  <%= Time.current.month %>月】
+</h1>
+<p id="notice"><%= notice %></p>
+<div class='row calendar_frame'>
+  <div class='col-md-12'>
+    <%= month_calendar do |date| %>
+      <%= date %>
+      <% number_purchases = @number_purchases.where(updated_at: date.midnight..(date.midnight + 1.day)) %>
+      <% number_purchases.each do |number_purchase| %>
+        <div class='calendar_font'><a href="/number_purchases/<%= number_purchase.id %>"><%= number_purchase.product.name %></a></div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
