@@ -1,13 +1,11 @@
 <h1>注文伝票</h1>
 <p id="notice"><%= notice %></p>
-
-<%= link_to '新しく商品を登録する', new_product_path, class: 'btn btn-primary btn-sm' %>
 <div class='row screen_frame'>
   <% @number_purchases.each do |order_slip| %>
     <div class='col-md-3 order_slip_frame'>
       <table>
         <tr>
-          <th>お客様氏名</th>
+          <th>顧客氏名</th>
           <td><%= order_slip.user.name %></td>
         </tr>
         <% order_slip.product.product_images.each do |p_image| %>
