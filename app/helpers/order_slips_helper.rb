@@ -1,0 +1,2 @@
+module OrderSlipsHelper
+end
