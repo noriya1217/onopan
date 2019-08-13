@@ -291,6 +291,8 @@ GEM
       rubyzip (~> 1.2, >= 1.2.2)
     sexp_processor (4.12.1)
     shellany (0.0.1)
+    simple_calendar (2.3.0)
+      rails (>= 3.0)
     spring (2.1.0)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -365,6 +367,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   seed-fu (~> 2.3)
   selenium-webdriver
+  simple_calendar (~> 2.0)
   spring
   spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)

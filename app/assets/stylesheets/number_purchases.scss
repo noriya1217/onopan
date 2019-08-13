@@ -1,0 +1,14 @@
+.calendar_font{
+  font-size: 1rem;
+  color: red;
+}
+
+.calendar_frame{
+  padding: 15px;
+  border-radius: 5px;
+  background: rgba(201,166,107,0.8);
+  position: absolute;
+  height: 85%;
+  width: 95%;
+  overflow: auto;
+}

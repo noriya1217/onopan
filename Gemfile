@@ -25,6 +25,7 @@ gem 'friendly_id', '~> 5.2.4'
 gem 'jbuilder', '~> 2.5'
 gem 'mini_magick', '~> 4.8'
 gem 'seed-fu', '~> 2.3'
+gem "simple_calendar", "~> 2.0"
 gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 # gem 'redis', '~> 4.0'

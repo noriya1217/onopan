@@ -1,0 +1,42 @@
+<div class="card form_frame store_form">
+  <div class="card-body login-card-body">
+    <h1>売上伝票詳細</h1>
+    <table>
+      <tr>
+          <th>顧客氏名</th>
+          <td><%= @number_purchase.user.name %></td>
+      </tr>
+      <% @number_purchase.product.product_images.each do |p_image| %>
+        <tr>
+          <th>商品画像</th>
+          <td><%= image_tag(p_image.image.url, :size => "320x240") %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <th><%= t('activerecord.attributes.product.name') %></th>
+        <td><%= @number_purchase.product.name %></td>
+      </tr>
+      <tr>
+        <th><%= t('activerecord.attributes.number_purchase.number') %></th>
+        <!-- TODO: 注文数を選べるようにしたい -->
+        <td>1個</td>
+      </tr>
+      <tr>
+        <th>お買い上げ日</th>
+        <td>
+          <%= @number_purchase.updated_at.year %>年
+          <%= @number_purchase.updated_at.month %>月
+          <%= @number_purchase.updated_at.day %>日
+          <% if (@number_purchase.updated_at - 12) < 0 %>
+            午前
+          <% else %>
+            午後
+          <% end %>
+          <%= @number_purchase.updated_at.hour %>時
+          <%= @number_purchase.updated_at.min %>分
+        </td>
+      </tr>
+    </table>
+    <%= link_to '戻る', :back, class: 'btn btn-default btn-sm' %>
+  </div>
+</div>
