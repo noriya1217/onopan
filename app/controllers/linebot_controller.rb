@@ -33,12 +33,12 @@ class LinebotController < ApplicationController
               end
               message = {
                 type: 'text',
-                text: "注文しました。\nしばらくお待ち下さい。"
+                text: "ご注文ありがとうございます。\n現在予約状態です。\n確定されるまで今しばらくお待ち下さい。"
               }
             else
               message = {
                 type: 'text',
-                text: "売切です。"
+                text: "この度はご注文いただきまして、誠にありがとうございます。\n大変申し訳ございませんが、売切となりました。\nまたのご利用をお待ちしております。"
               }
             end
             client.reply_message(event['replyToken'], message)
