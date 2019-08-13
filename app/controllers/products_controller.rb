@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
       client
       # TODO: 全端末に送るように後で変更
       user_id = 'U088ecb9e49b8eddf06df8fcf64e9aebb'
-      client.push_message(user_id, product_message)
+      response = client.push_message(user_id, product_message)
       redirect_to products_path, notice: '新しい商品を作成しました'
     else
       render :new
@@ -73,13 +73,6 @@ class ProductsController < ApplicationController
       :store_id,
       product_images_attributes: %i[id image product_id],
     )
-  end
-
-  def client
-    @client ||= Line::Bot::Client.new { |config|
-      config.channel_secret = ENV['LINE_CHANNEL_SECRET']
-      config.channel_token = ENV['LINE_CHANNEL_TOKEN']
-    }
   end
 
   def product_message
