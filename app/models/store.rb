@@ -5,6 +5,7 @@ class Store < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   mount_uploader :image, ImageUploader
+  has_many :products, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 30 }
   validates :address, presence: true

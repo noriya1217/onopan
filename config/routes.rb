@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :stores
   resources :stores
   resources :products
+  post '/callback' => 'linebot#callback' 
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
