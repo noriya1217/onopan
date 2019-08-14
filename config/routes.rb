@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_scope :store do
-    root "devise/sessions#new"
+    authenticated :store do
+      root :to => 'stores#index', as: :authenticated_root
+    end
+    unauthenticated :store do
+      root :to => 'users#index', as: :unauthenticated_root
+    end
   end
 
   devise_for :stores
@@ -8,6 +13,7 @@ Rails.application.routes.draw do
   resources :products
   resources :order_slips, only:[:index, :update]
   resources :number_purchases, only:[:index, :show]
+  resources :users, only:[:index]
 
   post '/callback' => 'linebot#callback'
 
