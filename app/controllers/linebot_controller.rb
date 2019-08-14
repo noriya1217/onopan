@@ -34,8 +34,23 @@ class LinebotController < ApplicationController
                 text: "この度はご注文いただきまして、誠にありがとうございます。\n大変申し訳ございませんが、売切となりました。\nまたのご利用をお待ちしております。"
               }
             end
-            client.reply_message(event['replyToken'], message)
+          elsif event.message['text'].eql?('プロフィール')
+            message = {
+              type: 'text',
+              text: "プロフィール届いた"
+            }
+          elsif event.message['text'].eql?('パン屋お気に入り')
+            message = {
+              type: 'text',
+              text: "パン屋お気に入り届いた"
+            }
+          elsif event.message['text'].eql?("'onopanマニュアル")
+            message = {
+              type: 'text',
+              text: "'onopanマニュアル届いた"
+            }
           end
+          client.reply_message(event['replyToken'], message)
         end
       end
     }
