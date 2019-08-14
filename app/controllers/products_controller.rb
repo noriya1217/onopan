@@ -2,6 +2,7 @@ require 'line/bot'
 
 class ProductsController < ApplicationController
   # before_action :set_store
+  before_action :authenticate_store!
   before_action :set_product, only: [:edit, :update, :destroy]
 
   def index

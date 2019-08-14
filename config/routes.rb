@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :products
   resources :order_slips, only:[:index, :update]
   resources :number_purchases, only:[:index, :show]
-  resources :users, only:[:index]
+  resources :users
 
   post '/callback' => 'linebot#callback'
 

@@ -1,5 +1,7 @@
 class OrderSlipsController < ApplicationController
   before_action :set_order_slip, only: [:update]
+  before_action :authenticate_store!
+
 
   def index
     product_ids = Product.where(store_id: current_store.id).ids
