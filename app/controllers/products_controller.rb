@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy]
 
   def index
-    @products = Product.all.order(created_at: :asc)
+    @products = Product.where(store_id: current_store.id).order(created_at: :asc)
   end
 
   def new
