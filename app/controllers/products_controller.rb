@@ -19,9 +19,10 @@ class ProductsController < ApplicationController
     @product.store_id = current_store.id
     if @product.save
       client
-      # TODO: 全端末に送るように後で変更
-      user_id = 'U088ecb9e49b8eddf06df8fcf64e9aebb'
-      client.push_message(user_id, product_message)
+      users_id = User.all.select(:line_id)
+      users_id.each do |user_id|
+        client.push_message(user_id.line_id, product_message)
+      end
       redirect_to products_path, notice: '新しい商品を作成しました'
     else
       render :new
@@ -35,9 +36,10 @@ class ProductsController < ApplicationController
   def update
     if @product.update(product_params)
       client
-      # TODO: 全端末に送るように後で変更
-      user_id = 'U088ecb9e49b8eddf06df8fcf64e9aebb'
-      client.push_message(user_id, product_message)
+      users_id = User.all.select(:line_id)
+      users_id.each do |user_id|
+        client.push_message(user_id.line_id, product_message)
+      end
       redirect_to products_path, notice: '商品情報を編集しました'
     else
       render :edit

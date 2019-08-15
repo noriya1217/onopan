@@ -12,8 +12,7 @@ class OrderSlipsController < ApplicationController
     # binding.pry
     if @order_slip.update_attribute(:permission, true)
       client
-      # TODO: 全端末に送るように後で変更
-      user_id = 'U088ecb9e49b8eddf06df8fcf64e9aebb'
+      user_id = @order_slip.user.line_id
       message = {
         type: 'text',
         text: "#{Store.find(current_store.id).name}から「#{@order_slip.product.name}」のご注文確定されました。"
