@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_store!, only: [:index]
+  # before_action :authenticate_store!, only: [:index]
   before_action :set_user, only: [:edit, :update, :destroy]
   # newとeditはLINEから送られてきた時だけアクセス許可する。
 
