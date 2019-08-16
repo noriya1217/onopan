@@ -18,7 +18,9 @@ class OrderSlipsController < ApplicationController
         text: "#{Store.find(current_store.id).name}から「#{@order_slip.product.name}」のご注文確定されました。"
       }
       client.push_message(user_id, message)
-      Relationship.create(user_id: @order_slip.user.id, store_id: @order_slip.product.store.id)
+      unless Relationship.find_by(user_id: @order_slip.user.id) && Relationship.find_by(store_id: @order_slip.product.store.id)
+        Relationship.create(user_id: @order_slip.user.id, store_id: @order_slip.product.store.id)
+      end
       redirect_to order_slips_path, notice: "#{@order_slip.user.name}様：#{@order_slip.product.name}の注文を確定しました。"
     else
       render :index
