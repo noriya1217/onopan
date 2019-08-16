@@ -58,6 +58,139 @@ class LinebotController < ApplicationController
               text: 'プロフィール情報を削除しました。'
             }
             client.reply_message(event['replyToken'], message)
+          elsif event.message['text'].eql?('プロフィール編集')
+            line_id = event['source']['userId']
+            user = User.find_by(line_id: line_id)
+            unless user
+              message = {
+                type: 'text',
+                text: 'プロフィールが登録されていません'
+              }
+            else
+              edit_text = <<~TEXT
+                下記の中から編集したい項目を選んでメッセージを送って下さい\n
+                （例）名前を田中から佐藤に変えたい場合【名前：佐藤】と送って下さい\n
+                名前：#{user.name}\n
+                年齢：#{user.age}\n
+                性別：#{user.sex}\n
+                職業：#{user.profession}\n
+                メールアドレス：#{user.email}\n
+                住所：#{user.address}
+              TEXT
+              message = {
+                type: 'text',
+                text: edit_text
+              }
+            end
+            client.reply_message(event['replyToken'], message)
+          elsif event.message['text'] =~ /^.*名前[ 　：:]([^【】:： 　]*)/
+            line_id = event['source']['userId']
+            user = User.find_by(line_id: line_id)
+            old_user_name = user.name
+            user.name = $1
+            if user.save
+              message = {
+                type: 'text',
+                text: "名前を#{old_user_name}から#{$1}に更新しました"
+              }
+            else
+              message = {
+                type: 'text',
+                text: "名前の更新に失敗しました。"
+              }
+            end
+            client.reply_message(event['replyToken'], message)
+          elsif event.message['text'] =~ /^.*年齢[ 　：:]([^【】:： 　]*)/
+            line_id = event['source']['userId']
+            user = User.find_by(line_id: line_id)
+            old_user_age = user.age
+            user.age = $1
+            if user.save
+              message = {
+                type: 'text',
+                text: "年齢を#{old_user_age}から#{$1}に更新しました"
+              }
+            else
+              message = {
+                type: 'text',
+                text: "年齢の更新に失敗しました。"
+              }
+            end
+            client.reply_message(event['replyToken'], message)
+          elsif event.message['text'] =~ /^.*性別[ 　：:]([^【】:： 　]*)/
+            line_id = event['source']['userId']
+            user = User.find_by(line_id: line_id)
+            old_user_sex = user.sex
+            user.sex = $1
+            if user.save
+              message = {
+                type: 'text',
+                text: "性別を#{old_user_sex}から#{$1}に更新しました"
+              }
+            else
+              message = {
+                type: 'text',
+                text: "性別の更新に失敗しました。"
+              }
+            end
+            client.reply_message(event['replyToken'], message)
+          elsif event.message['text'] =~ /^.*職業[ 　：:]([^【】:： 　]*)/
+            line_id = event['source']['userId']
+            user = User.find_by(line_id: line_id)
+            old_user_profession = user.profession
+            user.profession = $1
+            if user.save
+              message = {
+                type: 'text',
+                text: "職業を#{old_user_profession}から#{$1}に更新しました"
+              }
+            else
+              message = {
+                type: 'text',
+                text: "職業の更新に失敗しました。"
+              }
+            end
+            client.reply_message(event['replyToken'], message)
+          elsif event.message['text'] =~ /^.*メールアドレス[ 　：:]([^【】:： 　]*)/
+            line_id = event['source']['userId']
+            user = User.find_by(line_id: line_id)
+            old_user_email = user.email
+            user.email = $1
+            if user.save
+              message = {
+                type: 'text',
+                text: "メールアドレスを#{old_user_email}から#{$1}に更新しました"
+              }
+            else
+              message = {
+                type: 'text',
+                text: "メールアドレスの更新に失敗しました。"
+              }
+            end
+            client.reply_message(event['replyToken'], message)
+          elsif event.message['text'] =~ /^.*住所[ 　：:]([^【】:： 　]*)/
+            line_id = event['source']['userId']
+            user = User.find_by(line_id: line_id)
+            old_user_address = user.address
+            user.address = $1
+            if user.save
+              message = {
+                type: 'text',
+                text: "名前を#{old_user_address}から#{$1}に更新しました"
+              }
+            else
+              message = {
+                type: 'text',
+                text: "名前の更新に失敗しました。"
+              }
+            end
+            client.reply_message(event['replyToken'], message)
+          else
+            message = {
+              type: 'text',
+              text: "その指示は操作プログラムにありません。\nごめんなさい。"
+            }
+            client.reply_message(event['replyToken'], message)
           end
         end
       end
@@ -87,16 +220,14 @@ class LinebotController < ApplicationController
               "uri": "line://app/1599048461-KY1Q2QM8"
               },
               {
-                "type": "uri",
+                "type": "message",
                 "label": "編集",
-                "uri": "http://example.com/page/123"
-                #collectionで作って、usercreate,そのlineIDとりだし、destroy、そして変数だけ使ってUser.find_by(line_id: line_id)。そんでedit
+                "text": "プロフィール編集"
               },
               {
                 "type": "message",
                 "label": "削除",
                 "text": "プロフィール削除"
-                #削除するというメッセージを送って、またcollbackでうけとって、if文で処理して、削除する。
               }
           ]
       }

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # before_action :authenticate_store!, only: [:index]
-  before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:update]
   # newとeditはLINEから送られてきた時だけアクセス許可する。
 
   def index; end
@@ -52,20 +52,24 @@ class UsersController < ApplicationController
   end
 
   def edit
-
+    @user = User.find_by(line_id: @line_id)
+    render :edit
   end
 
   def update
 
   end
 
-  def destroy
-
+  def edit_search
+    if params[:line_id].present?
+      @line_id = params[:line_id]
+      edit
+    end
   end
 
   private
 
-  def user_product
+  def set_user
     @user = User.find(params[:id])
   end
 
@@ -80,6 +84,4 @@ class UsersController < ApplicationController
       @user_id = event['source']['userId']
     end
   end
-
-
 end
