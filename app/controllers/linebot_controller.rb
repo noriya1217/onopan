@@ -64,14 +64,28 @@ class LinebotController < ApplicationController
           elsif event.message['text'].eql?('パン屋お気に入り')
             line_id = event['source']['userId']
             user = User.find_by(line_id: line_id)
-            user.stores.each do |store|
-              @store = store
+            user.stores.each do |n|
+              @store = n
               client.push_message(user.line_id, store_favo_delete)
             end
           elsif event.message['text'].eql?("'onopanマニュアル")
+            manual = <<~TEXT
+              ▼LINE Botの機能\n\n
+              (1)ユーザープロフィール操作\n
+              画面下の「ここを押すとメニューが出るよ」を押して「プロフィール」を押して下さい。\n
+              「作成」「編集」「削除」のボタンから操作したい項目を選んで下さい。\n\n
+              (2)パン屋お気に入り解除\n
+              画面下の「ここを押すとメニューが出るよ」を押して「パン屋お気に入り」を押して下さい。\n
+              商品を購入したことのあるパン屋が表示されます。\n
+              パン屋の中にあるお気にいり解除ボタンを押すと、パン屋との繋がりを解除できます。\n\n
+              (3)商品購入\n
+              プロフィールを登録しているユーザーに、パン屋から商品の情報が届きます。\n
+              購入したいパンが見つかったら、購入ボタンを押して下さい。\n
+              パン屋が注文を確定すると、メッセージが届きますのでお待ち下さい。
+            TEXT
             message = {
               type: 'text',
-              text: "'onopanマニュアル届いた"
+              text: manual
             }
             client.reply_message(event['replyToken'], message)
           elsif event.message['text'].eql?('プロフィール削除')
