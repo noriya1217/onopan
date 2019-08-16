@@ -20,9 +20,9 @@ class LinebotController < ApplicationController
               line_id = event['source']['userId']
               user_id = User.find_by(line_id: line_id).id
               product_id = Product.find($1).id
-              @number_purchase = NumberPurchase.new(user_id: user_id, product_id: product_id, number: 1)
-              if @number_purchase.save!
-                @number_purchase.product.update_attribute(:number, @number_purchase.product.number - 1)
+              number_purchase = NumberPurchase.new(user_id: user_id, product_id: product_id, number: 1)
+              if number_purchase.save!
+                number_purchase.product.update_attribute(:number, number_purchase.product.number - 1)
               end
               message = {
                 type: 'text',
@@ -35,14 +35,39 @@ class LinebotController < ApplicationController
               }
             end
             client.reply_message(event['replyToken'], message)
+          elsif event.message['text'] =~ /.*のお気に入り解除_(\d+)/
+            line_id = event['source']['userId']
+            user_id = User.find_by(line_id: line_id).id
+            store = Store.find($1)
+            relationship = Relationship.find_by(user_id: user_id, store_id: store.id)
+            if relationship
+              if relationship.destroy
+                message = {
+                  type: 'text',
+                  text: "#{store.name}のお気に入りを解除しました。"
+                }
+              else
+                message = {
+                  type: 'text',
+                  text: "何らかの原因で解除できませんでした。"
+                }
+              end
+            else
+              message = {
+                type: 'text',
+                text: "既にお気に入りは解除されています。"
+              }
+            end
+            client.reply_message(event['replyToken'], message)
           elsif event.message['text'].eql?('プロフィール')
             client.reply_message(event['replyToken'], user_action_confirm)
           elsif event.message['text'].eql?('パン屋お気に入り')
-            message = {
-              type: 'text',
-              text: "パン屋お気に入り届いた"
-            }
-            client.reply_message(event['replyToken'], message)
+            line_id = event['source']['userId']
+            user = User.find_by(line_id: line_id)
+            user.stores.each do |store|
+              @store = store
+              client.push_message(user.line_id, store_favo_delete)
+            end
           elsif event.message['text'].eql?("'onopanマニュアル")
             message = {
               type: 'text',
@@ -228,6 +253,36 @@ class LinebotController < ApplicationController
                 "type": "message",
                 "label": "削除",
                 "text": "プロフィール削除"
+              }
+          ]
+      }
+    }
+  end
+
+  def store_favo_delete
+    store_text = <<~TEXT
+      店舗名：#{@store.name}\n
+      住所：#{@store.address}\n
+      Tel：#{@store.telephone}\n
+      営業時間：#{@store.start_time.hour}:#{@store.start_time.min}〜#{@store.end_time.hour}:#{@store.end_time.min}\n
+      アクセス方法：#{@store.access}
+    TEXT
+    {
+      "type": "template",
+      "altText": "This is a buttons template",
+      "template": {
+          "type": "buttons",
+          "text": store_text,
+          "defaultAction": {
+              "type": "uri",
+              "label": "View detail",
+              "uri": "http://example.com/page/123"
+          },
+          "actions": [
+              {
+                "type": "message",
+                "label": "お気に入り解除",
+                "text": "#{@store.name}のお気に入り解除_#{@store.id}"
               }
           ]
       }
