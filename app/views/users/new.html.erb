@@ -1,0 +1,44 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>'ono pan</title>
+</head>
+
+<body>
+  <h3>プロフィール</h3>
+    <% if @user.errors.any? %>
+      <div id='error_explanation' class='alert alert alert-danger'>
+        <h2><%= pluralize(@user.errors.count, 'error') %></h2>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= form_with(model: @user, local: true) do |f| %>
+      <table>
+        <tr><td><%= f.label :name %></td></tr>
+        <tr><td><%= f.text_field :name %></td></tr>
+        <tr><td><%= f.label :age %></td></tr>
+        <td><%= f.number_field :age %></td></tr>
+        <tr><td><%= f.label :sex %></td></tr>
+        <tr><td>
+          <label><%= f.radio_button :sex, "男" %>男</label>
+          <label><%= f.radio_button :sex, "女" %>女</label>
+        </td></tr>
+        <tr><td><%= f.label :profession %></td></tr>
+        <tr><td>
+          <%= f.select :profession, [["社会人", "社会人"], ["学生", "学生"], ["主婦", "主婦"]] %>
+        </td></tr>
+        <tr><td><%= f.label :email %></td></tr>
+        <tr><td><%= f.text_field :email %></td></tr>
+        <tr><td><%= f.label :address %></td></tr>
+        <tr><td><%= f.text_field :address %></td></tr>
+      </table>
+      <div class='actions'>
+        <hr>
+        <%= f.submit class: 'btn btn-primary btn-sm user_profile_create' %>
+      </div>
+    <% end %>
+  <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+</body>

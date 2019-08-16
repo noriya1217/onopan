@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :authenticate_store!, if: :store_signed_in?
   before_action :set_action_all, if: :store_signed_in?
   
   def client
