@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get :edit_search
     end
   end
+  resources :user_info, only:[:index]
 
   post '/callback' => 'linebot#callback'
 

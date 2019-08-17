@@ -7,6 +7,7 @@ class Store < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_many :products, dependent: :destroy
   has_many :relationship, dependent: :destroy
+  has_many :users, through: :relationship
 
   validates :name, presence: true, length: { maximum: 30 }
   validates :address, presence: true
