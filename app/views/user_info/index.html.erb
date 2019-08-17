@@ -1,0 +1,35 @@
+<h1>顧客情報</h1>
+<p id="notice"><%= notice %></p>
+
+<div class='row screen_frame'>
+  <% @store.users.each do |user| %>
+    <div class='col-md-5 user_info_frame'>
+      <table>
+        <tr>
+          <th><%= t('activerecord.attributes.user.name') %></th>
+          <td><%= user.name %></td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.user.age') %></th>
+          <td><%= user.age.to_s(:delimited) %></td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.user.sex') %></th>
+          <td><%= user.sex %></td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.user.profession') %></th>
+          <td><%= user.profession %></td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.user.email') %></th>
+          <td><%= user.email %></td>
+        </tr>
+        <tr>
+          <th><%= t('activerecord.attributes.user.address') %></th>
+          <td><%= user.address %></td>
+        </tr>
+      </table>
+    </div>
+  <% end %>
+</div>
