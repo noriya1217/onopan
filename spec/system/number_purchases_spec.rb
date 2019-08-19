@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'OrderSlips', type: :system do
+RSpec.describe 'NumberPurchase', type: :system do
   before do
     FactoryBot.create(:user)
     FactoryBot.create(:store)
@@ -14,11 +14,14 @@ RSpec.describe 'OrderSlips', type: :system do
   end
 
   describe '注文伝票' do
-    it '注文確定' do
+    it '注文確定及び過去売上伝票確認' do
       visit order_slips_path
       click_on '注文確定', match: :first
-
       expect(page).to have_content '注文を確定しました'
+      click_on '過去売上伝票'
+      expect(page).to have_content 'ロスパン10個詰め合わせ'
+      click_on 'ロスパン10個詰め合わせ'
+      expect(page).to have_content 'test tarou'
     end
   end
 

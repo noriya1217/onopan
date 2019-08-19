@@ -20,6 +20,7 @@ class UsersController < ApplicationController
         user.name = "nil"
         user.email = "nil@nil.nil"
         user.address = "nil"
+        user.sex = "男"
         user.line_id = params[:line_id]
         if user.save
           puts "line_id登録成功"
