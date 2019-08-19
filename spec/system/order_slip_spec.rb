@@ -7,7 +7,7 @@ RSpec.describe 'OrderSlips', type: :system do
     FactoryBot.create(:product)
     FactoryBot.create(:product_image)
     FactoryBot.create(:number_purchase)
-    visit root_url
+    visit new_store_session_path
     fill_in 'store_email', with: 'test@nifty.com'
     fill_in 'store_password', with: 'password'
     click_button 'Log in'

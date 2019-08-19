@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       else
         user = User.new
         user.name = "nil"
-        user.email = "nil"
+        user.email = "nil@nil.nil"
         user.address = "nil"
         user.line_id = params[:line_id]
         if user.save
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     else
       user = User.last
       user_not_line_id = User.new(user_params)
-      if user.name == "nil" && user.email == "nil" && user.address == "nil" && user.line_id.present?
+      if user.name == "nil" && user.email == "nil@nil.nil" && user.address == "nil" && user.line_id.present?
         user.name = user_not_line_id.name
         user.age = user_not_line_id.age
         user.sex = user_not_line_id.sex

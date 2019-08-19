@@ -5,7 +5,7 @@ RSpec.describe 'Products', type: :system do
     FactoryBot.create(:store)
     FactoryBot.create(:product)
     FactoryBot.create(:product_image)
-    visit root_url
+    visit new_store_session_path
     fill_in 'store_email', with: 'test@nifty.com'
     fill_in 'store_password', with: 'password'
     click_button 'Log in'
