@@ -29,5 +29,4 @@ RSpec.describe Relationship, type: :model do
     )
     expect(relationship).to be_valid
   end
-
 end
