@@ -7,7 +7,7 @@ RSpec.describe 'Stores', type: :system do
 
   describe 'ログイン' do
     it 'ログイン失敗' do
-      visit root_url
+      visit new_store_session_path
       fill_in 'store_email', with: 'example@yahoo.co.jp'
       fill_in 'store_password', with: 'abcdefg'
       click_button 'Log in'
@@ -15,7 +15,7 @@ RSpec.describe 'Stores', type: :system do
     end
 
     it 'ログイン成功成功' do
-      visit root_url
+      visit new_store_session_path
       fill_in 'store_email', with: 'test@nifty.com'
       fill_in 'store_password', with: 'password'
       click_button 'Log in'
@@ -47,7 +47,7 @@ RSpec.describe 'Stores', type: :system do
 
   describe 'プロフィール編集' do
     it '編集失敗' do
-      visit root_url
+      visit new_store_session_path
       fill_in 'store_email', with: 'test@nifty.com'
       fill_in 'store_password', with: 'password'
       click_button 'Log in'
@@ -67,7 +67,7 @@ RSpec.describe 'Stores', type: :system do
     end
 
     it '編集成功' do
-      visit root_url
+      visit new_store_session_path
       fill_in 'store_email', with: 'test@nifty.com'
       fill_in 'store_password', with: 'password'
       click_button 'Log in'
