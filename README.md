@@ -16,12 +16,6 @@
 
 フードロスをなくすサービス。
 
-## 操作手順
-
-- GIFやYouTubeを使い、操作手順としての動画を作成し、ここに載せる。
-
-## QRコード
-
 ## バージョン
 
 - Ruby 2.6.3
@@ -32,16 +26,11 @@
 - LINE Bot
 
     1. ユーザー登録
-        - 位置情報
     1. ユーザー情報編集
     1. アカウント削除
     1. 新着商品通知
-        - 位置情報
     1. 購入
-    1. 購入確認メッセージ
-    1. 注文取消(確定前)
     1. 注文確定メッセージ
-    1. アンケート機能
 
 - 商品設定・顧客情報画面(パン屋 / PC)
 
@@ -50,16 +39,37 @@
     1. 商品登録(ログイン後ホーム画面)
         - 画像登録
     1. 購入承認
-    1. ページネーション
-
-- 管理画面(サービス提供者 / PC)
-
-    1. ユーザー管理
-    1. 店舗(パン屋)管理
 
 ## 使用した技術
 
-## 使用予定Gem
+- LINE Bot API(Messaging API)
+- DEVISE
+- AWS EC2 / S3
+- RSpec(SystemSpec)
+
+## 使用Gem
+- Production
+
+    1. CarrierWave
+    1. chart-js-rails
+    1. devise
+    1. gon
+    1. line-bot-api
+    1. MiniMagic
+    1. simple_calendar
+    1. unicorn
+
+- Development / Test
+
+    1. capistrano
+    1. capybara
+    1. factory_bot_rails
+    1. faker
+    1. guard-rspec
+    1. rspec
+    1. rubocop
+    1. seed-fu
+    1. spring-commands-rspec
 
 ## カタログ設計
 
