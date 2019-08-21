@@ -1,0 +1,111 @@
+<div class='row product_form'>
+  <div class='col-md-12'>
+    <table>
+    <tr><td><h1>顧客分析</h1></td></tr>
+    <tr>
+      <td><canvas id="sex" width="500" height="300"></canvas></td>
+      <td><canvas id="age" width="500" height="300"></canvas></td>
+      <td><canvas id="profession" width="500" height="300"></canvas></td>
+    </tr>
+    </table>
+  </div>
+</div>
+
+<script>
+var ctx = document.getElementById("sex").getContext('2d');
+var sex = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ["男性", "女性"],
+        datasets: [{
+            label: "サンプル",
+            data: [gon.man, gon.woman],
+            backgroundColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)'
+            ],
+            borderColor: [
+              'rgba(255,99,132,1)',
+              'rgba(54, 162, 235, 1)'
+            ],
+            fill: false
+        }]
+    },
+    options: {
+        title:  {
+          display: true,
+          text: "性別"
+        }
+    }
+});
+
+var ctx = document.getElementById("age").getContext('2d');
+var age = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ["10代", "20代", "30代", "40代", "50代"],
+        datasets: [{
+            label: "サンプル",
+            data: [gon.teen, gon.twenties, gon.thirties, gon.forties, gon.fifties],
+            backgroundColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+            ],
+            borderColor: [
+              'rgba(255,99,132,1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+            ],
+            fill: false
+        }]
+    },
+    options: {
+        title:  {
+          display: true,
+          text: "年代"
+        }
+    }
+});
+
+var ctx = document.getElementById("profession").getContext('2d');
+var profession = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ["社会人", "主婦", "学生", "アルバイト", "無職"],
+        datasets: [{
+            label: "サンプル",
+            data: [gon.society, gon.housewife, gon.student, gon.part_time_job, gon.unemployed],
+            backgroundColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+            ],
+            borderColor: [
+              'rgba(255,99,132,1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+            ],
+            fill: false
+        }]
+    },
+    options: {
+        title:  {
+          display: true,
+          text: "職業"
+        }
+    }
+});
+</script>

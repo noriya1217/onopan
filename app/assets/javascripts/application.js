@@ -13,5 +13,6 @@
 //= require jquery/dist/jquery.min
 //= require bootstrap/dist/js/bootstrap.min
 //= require admin-lte/dist/js/adminlte.min
+//= require chart.js/dist/Chart.min
 //= require rails-ujs
 //= require_tree .

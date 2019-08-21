@@ -5,7 +5,7 @@ Faker::Config.locale = :ja
 1.upto(20) do |i|
   ages = [10, 20, 30, 40, 50]
   sexs = ['男', '女']
-  professions = ['会社員', '公務員', '自営業', '主婦', '学生', 'アルバイト', '無職']
+  professions = ['社会人', '主婦', '学生', 'アルバイト', '無職']
 
   User.seed do |s|
     s.id = i

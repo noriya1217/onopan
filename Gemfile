@@ -20,8 +20,10 @@ gem 'sass-rails', '~> 5.0'
 
 # Backend
 gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
+gem 'chart-js-rails'
 gem 'dotenv-rails'
 gem 'friendly_id', '~> 5.2.4'
+gem 'gon'
 gem 'jbuilder', '~> 2.5'
 gem 'mini_magick', '~> 4.8'
 gem 'seed-fu', '~> 2.3'
