@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     end
   end
   resources :user_info, only:[:index]
+  resources :user_analysis, only:[:index]
 
   post '/callback' => 'linebot#callback'
 

@@ -1,5 +1,5 @@
 require 'fileutils'
-Dir.chdir 'public/uploads/' #僕はここに保存しているだけなので適宜変更
+Dir.chdir 'public/uploads/'
 FileUtils.rm(Dir.glob('*.*'))
 
 Store.seed do |s|
@@ -40,4 +40,24 @@ Store.seed do |s|
   s.end_time = Time.zone.local(2019, 8, 14, 23, 50, 0)
   s.access = '築地駅から徒歩2分'
   s.image = Rails.root.join("db/fixtures/images/photo3.jpg").open
+end
+
+
+Faker::Config.locale = :ja
+I18n.locale = 'ja'
+
+4.upto(20) do |i|
+  Store.seed do |s|
+    s.id = i
+    s.email = Faker::Internet.email
+    s.password = 'password'
+    s.password_confirmation = 'password'
+    s.name = Faker::Creature::Animal.name + 'のパン屋'
+    s.address = Faker::Address.city
+    s.telephone = Faker::PhoneNumber.cell_phone
+    s.start_time = Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :morning)
+    s.end_time = Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :evening)
+    s.access = 'お店までの行き方等を記載する'
+    s.image = Rails.root.join("db/fixtures/images/photo#{i % 3 + 1}.jpg").open
+  end
 end
