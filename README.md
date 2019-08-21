@@ -79,7 +79,11 @@ https://drive.google.com/file/d/1JBjKUueBZq6oZCChGhhQao0QqAYNKdKp/view?usp=shari
 
 https://drive.google.com/file/d/1JBjKUueBZq6oZCChGhhQao0QqAYNKdKp/view?usp=sharing
 
+- 優先度(高)機能のみ
 !['ono pan_画面遷移図](https://github.com/noriya1217/onopan/blob/images/onopan_screen_transition_diagram.jpg)
+
+- 優先度(高/低)全て含む機能
+!['ono pan_画面遷移図_全ての機能有](https://github.com/noriya1217/onopan/blob/images/onopan_screen_transition_diagram_all.jpg)
 
 ## 画面ワイヤーフレーム
 
