@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_scope :store do
     authenticated :store do
-      root :to => 'stores#index', as: :authenticated_root
+      root :to => 'products#index', as: :authenticated_root
     end
     unauthenticated :store do
       root :to => 'users#index', as: :unauthenticated_root
