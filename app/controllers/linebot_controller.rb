@@ -215,12 +215,12 @@ class LinebotController < ApplicationController
             if user.save
               message = {
                 type: 'text',
-                text: "名前を#{old_user_address}から#{$1}に更新しました"
+                text: "住所を#{old_user_address}から#{$1}に更新しました"
               }
             else
               message = {
                 type: 'text',
-                text: "名前の更新に失敗しました。"
+                text: "住所の更新に失敗しました。"
               }
             end
             client.reply_message(event['replyToken'], message)
