@@ -3,9 +3,30 @@
     <table>
     <tr><td><h1>顧客分析</h1></td></tr>
     <tr>
-      <td><canvas id="sex" width="500" height="300"></canvas></td>
-      <td><canvas id="age" width="500" height="300"></canvas></td>
-      <td><canvas id="profession" width="500" height="300"></canvas></td>
+      <td>
+        <canvas id="sex" width="500" height="300"></canvas>
+        <p class="user_analysis_frame">男性：<%= @man %>人</p>
+        <p class="user_analysis_frame">女性：<%= @woman %>人</p>
+        <p class="user_analysis_frame">　</p>
+        <p class="user_analysis_frame">　</p>
+        <p class="user_analysis_frame">　</p>
+      </td>
+      <td>
+        <canvas id="age" width="500" height="300"></canvas>
+        <p class="user_analysis_frame">10代：<%= @teen %>人</p>
+        <p class="user_analysis_frame">20代：<%= @twenties %>人</p>
+        <p class="user_analysis_frame">30代：<%= @thirties %>人</p>
+        <p class="user_analysis_frame">40代：<%= @forties %>人</p>
+        <p class="user_analysis_frame">50代：<%= @fifties %>人</p>
+      </td>
+      <td>
+        <canvas id="profession" width="500" height="300"></canvas>
+        <p class="user_analysis_frame">社会人：<%= @society %>人</p>
+        <p class="user_analysis_frame">主婦：<%= @housewife %>人</p>
+        <p class="user_analysis_frame">学生：<%= @student %>人</p>
+        <p class="user_analysis_frame">アルバイト：<%= @part_time_job %>人</p>
+        <p class="user_analysis_frame">無職：<%= @unemployed %>人</p>
+      </td>
     </tr>
     </table>
   </div>
@@ -21,12 +42,12 @@ var sex = new Chart(ctx, {
             label: "サンプル",
             data: [gon.man, gon.woman],
             backgroundColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)'
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 99, 132, 1)'
             ],
             borderColor: [
-              'rgba(255,99,132,1)',
-              'rgba(54, 162, 235, 1)'
+              'rgba(54, 162, 235, 1)',
+              'rgba(255,99,132,1)'
             ],
             fill: false
         }]
@@ -48,16 +69,16 @@ var age = new Chart(ctx, {
             label: "サンプル",
             data: [gon.teen, gon.twenties, gon.thirties, gon.forties, gon.fifties],
             backgroundColor: [
-              'rgba(255, 99, 132, 1)',
               'rgba(54, 162, 235, 1)',
+              'rgba(255, 99, 132, 1)',
               'rgba(255, 206, 86, 1)',
               'rgba(75, 192, 192, 1)',
               'rgba(153, 102, 255, 1)',
               'rgba(255, 159, 64, 1)'
             ],
             borderColor: [
-              'rgba(255,99,132,1)',
               'rgba(54, 162, 235, 1)',
+              'rgba(255,99,132,1)',
               'rgba(255, 206, 86, 1)',
               'rgba(75, 192, 192, 1)',
               'rgba(153, 102, 255, 1)',
@@ -83,16 +104,16 @@ var profession = new Chart(ctx, {
             label: "サンプル",
             data: [gon.society, gon.housewife, gon.student, gon.part_time_job, gon.unemployed],
             backgroundColor: [
-              'rgba(255, 99, 132, 1)',
               'rgba(54, 162, 235, 1)',
+              'rgba(255, 99, 132, 1)',
               'rgba(255, 206, 86, 1)',
               'rgba(75, 192, 192, 1)',
               'rgba(153, 102, 255, 1)',
               'rgba(255, 159, 64, 1)'
             ],
             borderColor: [
-              'rgba(255,99,132,1)',
               'rgba(54, 162, 235, 1)',
+              'rgba(255,99,132,1)',
               'rgba(255, 206, 86, 1)',
               'rgba(75, 192, 192, 1)',
               'rgba(153, 102, 255, 1)',
