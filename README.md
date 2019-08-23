@@ -40,6 +40,10 @@
         - 画像登録
     1. 購入承認
 
+## 使い方
+
+https://docs.google.com/spreadsheets/d/1eDzwu_zNBpFci_TGAzBEXLxIx81iTJzf7BdUquxzmbE/edit#gid=1263182803&range=A1
+
 ## 使用した技術
 
 - LINE Bot API(Messaging API)
@@ -73,11 +77,11 @@
 
 ## カタログ設計
 
-https://docs.google.com/spreadsheets/d/1eDzwu_zNBpFci_TGAzBEXLxIx81iTJzf7BdUquxzmbE/edit#gid=0
+https://docs.google.com/spreadsheets/d/1eDzwu_zNBpFci_TGAzBEXLxIx81iTJzf7BdUquxzmbE/edit#gid=1925765415
 
 ## テーブル設計
 
-https://docs.google.com/spreadsheets/d/1eDzwu_zNBpFci_TGAzBEXLxIx81iTJzf7BdUquxzmbE/edit#gid=1796239193
+https://docs.google.com/spreadsheets/d/1eDzwu_zNBpFci_TGAzBEXLxIx81iTJzf7BdUquxzmbE/edit#gid=368186664
 
 ## ER図
 
@@ -97,5 +101,9 @@ https://drive.google.com/file/d/1JBjKUueBZq6oZCChGhhQao0QqAYNKdKp/view?usp=shari
 
 ## 画面ワイヤーフレーム
 
-https://docs.google.com/spreadsheets/d/1eDzwu_zNBpFci_TGAzBEXLxIx81iTJzf7BdUquxzmbE/edit#gid=1632550666
+https://docs.google.com/spreadsheets/d/1eDzwu_zNBpFci_TGAzBEXLxIx81iTJzf7BdUquxzmbE/edit#gid=679879839
 
+
+## アーキテクチャ
+
+![アーキテクチャ](https://github.com/noriya1217/onopan/blob/images/architecture.png)
