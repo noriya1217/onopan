@@ -29,7 +29,8 @@ gem 'mini_magick', '~> 4.8'
 gem 'seed-fu', '~> 2.3'
 gem "simple_calendar", "~> 2.0"
 gem 'uglifier', '>= 1.3.0'
-# gem 'mini_racer', platforms: :ruby
+gem 'unicorn'
+gem 'mini_racer', platforms: :ruby
 # gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
@@ -39,6 +40,8 @@ gem 'devise'
 
 # API
 gem 'line-bot-api'
+
+gem 'fog-aws'
 
 group :development, :test do
   gem 'better_errors'
@@ -52,6 +55,11 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
