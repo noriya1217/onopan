@@ -40,6 +40,8 @@ gem 'devise'
 # API
 gem 'line-bot-api'
 
+gem 'fog-aws'
+
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
