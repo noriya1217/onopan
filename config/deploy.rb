@@ -1,3 +1,5 @@
+require 'seed-fu/capistrano'
+
 # config valid only for current version of Capistrano
 lock '3.6.0'
 
@@ -60,4 +62,7 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
     end
   end
+
+  # Trigger the task after update_code
+  after 'deploy:update_code', 'db:seed_fu'
 end
