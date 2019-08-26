@@ -31,6 +31,7 @@ gem "simple_calendar", "~> 2.0"
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 gem 'mini_racer', platforms: :ruby
+gem 'faker'
 # gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
@@ -48,7 +49,6 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
-  gem 'faker'
   gem 'launchy'
   gem 'letter_opener_web'
   gem 'pry-rails'
