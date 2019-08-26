@@ -6,7 +6,11 @@ class StoresController < ApplicationController
     @store = Store.find(current_store.id)
   end
 
-  def show; end
+  def show
+    if @store.id != current_store.id
+      redirect_to store_path(current_store.id), notice: '他店のプロフィールを参照するのは許可されていません'
+    end
+  end
 
   private
 
