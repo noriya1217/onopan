@@ -1,4 +1,4 @@
-require 'seed-fu/capistrano'
+require 'seed-fu/capistrano3'
 
 # config valid only for current version of Capistrano
 lock '3.6.0'
@@ -63,6 +63,6 @@ namespace :deploy do
     end
   end
 
-  # Trigger the task after update_code
-  after 'deploy:update_code', 'db:seed_fu'
+  # Trigger the task before publishing
+  before 'deploy:publishing', 'db:seed_fu'
 end
