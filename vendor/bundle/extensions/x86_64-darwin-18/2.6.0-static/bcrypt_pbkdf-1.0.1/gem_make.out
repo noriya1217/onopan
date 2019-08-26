@@ -1,0 +1,19 @@
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/bcrypt_pbkdf-1.0.1/ext/mri
+/Users/apple/.rbenv/versions/2.6.3/bin/ruby -I /Users/apple/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20190826-61254-elqha2.rb extconf.rb
+creating Makefile
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/bcrypt_pbkdf-1.0.1/ext/mri
+make "DESTDIR=" clean
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/bcrypt_pbkdf-1.0.1/ext/mri
+make "DESTDIR="
+compiling bcrypt_pbkdf.c
+compiling bcrypt_pbkdf_ext.c
+compiling blowfish.c
+compiling explicit_bzero.c
+compiling hash_sha512.c
+linking shared-object bcrypt_pbkdf_ext.bundle
+
+current directory: /Users/apple/workspace/onopan/vendor/bundle/gems/bcrypt_pbkdf-1.0.1/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_pbkdf_ext.bundle ./.gem.20190826-61254-ku4vua
