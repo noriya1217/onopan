@@ -36,7 +36,7 @@ ja:
         expiration: "消費期限"
         shipping: "配送方法"
         remarks: "備考"
-      product_image:
+      product/product_images:
         image: "商品画像"
       number_purchase:
         number: "注文数"
